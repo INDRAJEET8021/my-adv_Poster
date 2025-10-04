@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Design Service - Indrajeet Rai</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            max-width: 550px;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(245, 87, 108, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            50%, 100% { transform: translateX(100%); }
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-text h2 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .brand-text p {
+            font-size: 11px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        .contact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 14px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .contact-item span {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .main-content {
+            padding: 30px 25px;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .title-section h1 {
+            font-size: 42px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            animation: fadeIn 0.8s ease-out 0.4s both;
+        }
+
+        .subtitle-wrapper h2 {
+            font-size: 26px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .discount-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .offer-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .offer-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .offer-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .offer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .features {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .features li {
+            font-size: 14px;
+            color: #34495e;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .features li:hover {
+            transform: translateX(6px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .features li:hover::before {
+            transform: scaleY(1);
+        }
+
+        .check-icon {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 3px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 25px 0;
+            animation: fadeIn 0.8s ease-out 0.8s both;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-btn:hover::before {
+            left: 100%;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+        }
+
+        .contact-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-left: 12px solid white;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            margin-left: 4px;
+        }
+
+        .urgency-box {
+            background: white;
+            border: 2px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            border-radius: 20px;
+            padding: 22px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 12px 30px rgba(245, 87, 108, 0.2);
+            animation: fadeIn 0.8s ease-out 1s both;
+        }
+
+        .urgency-box h3 {
+            font-size: 18px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .urgency-box p {
+            font-size: 28px;
+            font-weight: 900;
+            color: #2c3e50;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .urgency-box .sparkle {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .contact-details {
+            text-align: center;
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 16px;
+            animation: fadeIn 0.8s ease-out 1.2s both;
+        }
+
+        .contact-details p {
+            margin: 8px 0;
+            color: #5a6c7d;
+            font-size: 13px;
+        }
+
+        .contact-details strong {
+            color: #2c3e50;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 18px;
+            }
+
+            .brand {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-header {
+                flex-direction: column;
+            }
+
+            .title-section h1 {
+                font-size: 34px;
+            }
+
+            .subtitle-wrapper h2 {
+                font-size: 22px;
+            }
+
+            .main-content {
+                padding: 25px 20px;
+            }
+
+            .urgency-box p {
+                font-size: 24px;
+            }
+        }
+        
+        /* Print styles for PDF */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0;
+                min-height: auto;
+            }
+            
+            body::before, body::after {
+                display: none;
+            }
+            
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                animation: none;
+            }
+            
+            .contact-btn:hover, .features li:hover {
+                transform: none;
+            }
+            
+            .logo::before, .contact-btn::before {
+                display: none;
+            }
+            
+            .sparkle {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="brand">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h2>PIXELCRAFT</h2>
+                    <p>Professional Web Solutions</p>
+                </div>
+            </div>
+            <div class="contact-header">
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span>6207436721</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>indrajeetrai903@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="title-section">
+                <h1>WEBSITE</h1>
+                <div class="subtitle-wrapper">
+                    <h2>Design Service</h2>
+                    <div class="discount-badge">30% OFF</div>
+                </div>
+            </div>
+
+            <div class="offer-box">
+                <div class="offer-title">Premium Package Features</div>
+                <ul class="features">
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>20 Up to 35 Pages Website</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Free Hosting & SSL (1 Year)</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Free Domain (1 Year)</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>10 Professional Business Email</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Paid Website Theme (Lifetime)</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Fully Customized Solution</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>1-Year Technical Support</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Fully Responsive Design</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cta-section">
+                <button class="contact-btn" onclick="window.location.href='tel:+916207436721'">
+                    Contact Us Now
+                    <div class="play-icon"></div>
+                </button>
+            </div>
+
+            <div class="urgency-box">
+                <svg class="sparkle" viewBox="0 0 24 24" fill="url(#grad1)">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                </svg>
+                <h3>⚡ Limited Time Offer ⚡</h3>
+                <p>Only 4 Packages Left at ₹18,000</p>
+            </div>
+
+            <div class="contact-details">
+                <p><strong>📧 Email:</strong> indrajeetrai903@gmail.com</p>
+                <p><strong>📞 Phone:</strong> +91 6207436721</p>
+                <p><strong>👤 Indrajeet Rai</strong> - Your Digital Partner</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
